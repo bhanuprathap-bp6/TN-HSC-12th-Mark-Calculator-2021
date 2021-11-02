@@ -1,0 +1,1301 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> TN HSC +2 Result Calculator </title>
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	background: radial-gradient(blueviolet,#2c2f69);
+	color: antiquewhite;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+.bdy{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.group_selection{
+	margin: 0%;
+	padding: 0%;
+}
+
+#group{
+	padding: 5px 27%;
+	width: 100%;
+}
+
+input{
+	padding: 5px 0px 5px 27px;
+	width:100%;}
+
+#button{
+border-radius:3px;
+padding:6px 116px;
+background:lawngreen;
+color:blue;
+border:none;
+outline:none;
+margin: auto;
+}
+#button:hover{
+cursor:pointer;
+}
+
+#cutoffbutton{
+	padding: 11px 0;
+    border-radius: 10px;
+background:lawngreen;
+color:blue;
+border:none;
+outline:none;
+margin: auto;
+}
+#cutoffbutton:hover{
+cursor:pointer;
+}
+    
+
+.internal_mark{
+	padding: 0px 20px;
+	text-align: center;
+	font-style: normal;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cutoff_class .input{
+	padding: 5px 0px 5px 27px;
+	width:100%;
+}
+
+.foot {
+	margin:-80px 10px;
+	padding: 0%;
+}
+
+
+a{
+	font-weight: 100;
+	font-family:cursive;
+	color: chartreuse;
+}
+
+.firework {
+	position: absolute;
+}
+.explosion {
+	position: absolute;
+	left: -2px;
+	bottom: 0;
+	width: 4px;
+	height: 80px;
+	transform-origin: 50% 100%;
+	/* background-color: rgba(0,0,0,.2); */
+	overflow: hidden;
+}
+.explosion:nth-child(1) {
+	transform: rotate(0deg) translateY(-15px);
+}
+.explosion:nth-child(2) {
+	transform: rotate(30deg) translateY(-15px);
+}
+.explosion:nth-child(3) {
+	transform: rotate(60deg) translateY(-15px);
+}
+.explosion:nth-child(4) {
+	transform: rotate(90deg) translateY(-15px);
+}
+.explosion:nth-child(5) {
+	transform: rotate(120deg) translateY(-15px);
+}
+.explosion:nth-child(6) {
+	transform: rotate(150deg) translateY(-15px);
+}
+.explosion:nth-child(7) {
+	transform: rotate(180deg) translateY(-15px);
+}
+.explosion:nth-child(8) {
+	transform: rotate(210deg) translateY(-15px);
+}
+.explosion:nth-child(9) {
+	transform: rotate(240deg) translateY(-15px);
+}
+.explosion:nth-child(10) {
+	transform: rotate(270deg) translateY(-15px);
+}
+.explosion:nth-child(11) {
+	transform: rotate(300deg) translateY(-15px);
+}
+.explosion:nth-child(12) {
+	transform: rotate(330deg) translateY(-15px);
+}
+
+.explosion::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	height: 40px;
+	background-color: #f5cf52;
+}
+
+  
+.container {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100%;
+}
+.container span {
+display: block;
+ }
+  
+.text1 {
+color: white;
+font-size: 30px;
+font-weight: 600;
+letter-spacing: 8px;
+margin-bottom: 20px;
+background: transparent;
+position: relative;
+animation: text 3s 1;
+font-family:Segoe Script;
+border-radius: 30%;
+ }
+  
+.text2 {
+font-size: 25px;
+color: yellow;
+font-family: Segoe Print,Georgia, serif;
+}
+
+@keyframes text {
+0% {
+color: black;
+ margin-bottom: -40px;
+ }
+  
+ 30% {
+letter-spacing: 25px;
+margin-bottom: -40px;
+ }
+  
+85% {
+letter-spacing: 8px;
+margin-bottom: -40px;
+ }
+ }
+
+@keyframes explosion {
+	0% {
+		top: 100%;
+	}
+	33%, 100% {
+		top: -50%;
+	}
+}
+
+#firework1 {
+	left: 50%;
+	top: 50%;
+	transform: scale(1);
+}
+#firework1 .explosion::before {
+	animation: explosion 2s ease-in-out infinite;
+}
+
+#firework2 {
+	left: 40%;
+	top: 45%;
+	transform: scale(.7);
+}
+#firework2 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+	background-color: red;}
+
+#firework3 {
+	left: 60%;
+	top: 65%;
+	transform: scale(.4);
+}
+#firework3 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: green;
+}
+
+#firework4 {
+	left: 60%;
+	top: 45%;
+	transform: scale(.2);
+}
+#firework4 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: yellow;
+}
+
+#firework5 {
+	left: 10%;
+	top: 65%;
+	transform: scale(.4);
+}
+#firework5 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: orange;
+}
+
+#firework6 {
+	left: 20%;
+	top: 35%;
+	transform: scale(.4);
+}
+#firework6 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: violet;
+}
+
+
+
+#firework7 {
+	left: 90%;
+	top: 65%;
+	transform: scale(.2);
+}
+#firework7 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: indigo;
+}
+
+#firework8 {
+	left: 90%;
+	top: 45%;
+	transform: scale(.2);
+}
+#firework8 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: red;
+}
+
+#firework9 {
+	left: 90%;
+	top: 45%;
+	transform: scale(.2);
+}
+#firework9 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: brown;
+}
+
+#firework10 {
+	left: 90%;
+	top: 35%;
+	transform: scale(.5);
+}
+#firework10 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: red;
+}
+
+#firework11 {
+	left: 30%;
+	top: 55%;
+	transform: scale(.3);
+}
+#firework11 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+	background-color: darkred;}
+
+#firework12 {
+	left: 30%;
+	top: 25%;
+	transform: scale(.7);
+}
+#firework12 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+	background-color: red;}
+
+#firework13 {
+	left: 40%;
+	top: 25%;
+	transform: scale(.4);
+}
+#firework13 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: green;
+}
+
+#firework14 {
+	left: 60%;
+	top: 25%;
+	transform: scale(.2);
+}
+#firework14 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: yellow;
+}
+
+#firework15 {
+	left: 10%;
+	top: 35%;
+	transform: scale(.4);
+}
+#firework15 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: orange;
+}
+
+#firework16 {
+	left: 20%;
+	top: 35%;
+	transform: scale(.4);
+}
+#firework16 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: violet;
+}
+
+
+
+#firework17 {
+	left: 90%;
+	top: 25%;
+	transform: scale(.2);
+}
+#firework17 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: indigo;
+}
+
+#firework18 {
+	left: 90%;
+	top: 35%;
+	transform: scale(.2);
+}
+#firework18 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: red;
+}
+
+#firework19 {
+	left: 90%;
+	top: 30%;
+	transform: scale(.2);
+}
+#firework19 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: brown;
+}
+
+#firework20 {
+	left: 90%;
+	top: 15%;
+	transform: scale(.5);
+}
+#firework20 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: red;
+}
+
+
+#firework21 {
+	left: 80%;
+	top: 55%;
+	transform: scale(.3);
+}
+#firework21 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+	background-color: darkred;}
+
+#firework22 {
+	left: 80%;
+	top: 75%;
+	transform: scale(.7);
+}
+#firework22 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+	background-color: red;}
+
+#firework23 {
+	left: 80%;
+	top: 65%;
+	transform: scale(.4);
+}
+#firework23 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: green;
+}
+
+#firework24 {
+	left: 80%;
+	top: 55%;
+	transform: scale(.2);
+}
+#firework24 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: yellow;
+}
+
+#firework25 {
+	left: 10%;
+	top: 45%;
+	transform: scale(.4);
+}
+#firework25 .explosion::before {
+	animation: explosion 2s .3s ease-in-out infinite;
+	background-color: orange;
+}
+
+#firework26 {
+	left: 20%;
+	top: 65%;
+	transform: scale(.4);
+}
+#firework26 .explosion::before {
+	animation: explosion 1s .4s ease-in-out infinite;
+	background-color: violet;
+}
+
+
+
+#firework27 {
+	left: 30%;
+	top: 65%;
+	transform: scale(.2);
+}
+#firework27 .explosion::before {
+	animation: explosion 3s .1s ease-in-out infinite;
+	background-color: indigo;
+}
+
+#firework28 {
+	left: 20%;
+	top: 55%;
+	transform: scale(.2);
+}
+#firework28 .explosion::before {
+	animation: explosion 3s .2s ease-in-out infinite;
+	background-color: red;
+}
+
+#firework29 {
+	left: 90%;
+	top: 80%;
+	transform: scale(.2);
+}
+#firework29 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: brown;
+}
+
+#firework30 {
+	left: 20%;
+	top: 75%;
+	transform: scale(.5);
+}
+#firework30 .explosion::before {
+	animation: explosion 3s .4s ease-in-out infinite;
+	background-color: red;
+}
+
+
+</style>
+
+<script>
+	function chosegroup(){
+		var student_namejs = document.getElementById("student_namein").value;
+		var g = document.getElementById("group");
+		G=g.options[g.selectedIndex].value;
+		
+		var movetonextpg = "yes";
+		if(student_namejs=="" || G==0){
+			alert("Enter Your Name and Group.");
+			movetonextpg = "no";
+		}
+		else{
+			document.getElementById("group_selection").style.display="none";
+			document.getElementById("X_mark").style.display="block";
+		}
+	}
+		function SSLC(){
+			
+			var g = document.getElementById("group");
+			G=g.options[g.selectedIndex].value;
+    		
+			var a = document.getElementById("t10").value;
+			var b = document.getElementById("e10").value;
+			var c = document.getElementById("m10").value;
+			var d = document.getElementById("s10").value;
+			var e = document.getElementById("ss10").value;
+			
+			var sslcmark = [Number(a),Number(b),Number(c),Number(d),Number(e)];
+			console.log("10th marks" + sslcmark);
+		
+			sslcmark.sort(function(a, b){return a - b});
+       		sslcmark.reverse();
+
+			  let tot50=(sslcmark[0]+sslcmark[1]+sslcmark[2])/6 ;
+			  console.log(tot50);
+
+			  //prevent from empty value
+			if(a==0 || b==0 || c==0 || d==0 || e==0){
+				alert("Enter All The Marks");	
+			}
+			else{
+				document.getElementById("X_mark").style.display="none";
+				document.getElementById("XI_mark").style.display="block";
+				
+    			if(G==1){
+					document.getElementById("bio_marks").style.display="block";}
+				else if(G==2){
+					document.getElementById("cs_marks").style.display="block";}
+			}		
+
+			  return tot50;
+		}
+
+		function HSC1() {
+
+			var a = Number(document.getElementById("t11").value);
+			var b = Number(document.getElementById("e11").value);
+			var c = Number(document.getElementById("m11").value);
+			var d = Number(document.getElementById("p11").value);
+			var e = Number(document.getElementById("c11").value);
+			var f =0;
+
+			var g = document.getElementById("group");
+			G=g.options[g.selectedIndex].value;
+    		if(G==1){
+				f = Number(document.getElementById("b11").value);
+			}
+			else if(G==2){
+				f = Number(document.getElementById("cs11").value);
+			}
+
+			var hsc1_array=[a,b,c,d,e,f];
+			console.log("11th marks: " + hsc1_array);
+			var tot20=[((a-10)/90)*20,((b-10)/90)*20,((c-10)/90)*20,((d-30)/70)*20,((e-30)/70)*20,((f-30)/70)*20];
+			console.log(tot20);
+
+			if(a==0 || b==0 || c==0 || d==0 || e==0 || f==0){
+				alert("Enter All The Marks");
+			}
+			else{
+				document.getElementById("XI_mark").style.display="none";
+				document.getElementById("internal_mark").style.display="block";
+			}
+			return tot20;
+		}
+//prevent repeating 
+var noofrep=1;
+		function HSC2result(){
+			
+			var tot50 = SSLC();
+			var tot20 = HSC1();
+
+			var a = Math.round(tot50 + tot20[0] + 30);
+			var b = Math.round(tot50 + tot20[1] + 30);
+			var c = Math.round(tot50 + tot20[2] + 30);
+			var d = Math.round(tot50 + tot20[3] + 30);
+			var e = Math.round(tot50 + tot20[4] + 30);
+			var f = Math.round(tot50 + tot20[5] + 30);
+
+			var tot100 = (a+b+c+d+e+f);
+			console.log(a,b,c,d,e,f,tot100);
+			var totarray = [a,b,c,d,e,f]; 
+
+			document.getElementById("t12").value=a;
+			document.getElementById("e12").value=b;
+			document.getElementById("m12").value=c;	
+			document.getElementById("p12").value=d;
+			document.getElementById("c12").value=e;			
+			
+			document.getElementById("r12").value=tot100;
+
+			document.getElementById("internal_mark").style.display="none";
+
+			var student_namejs = document.getElementById("student_namein").value;
+
+
+			document.getElementById("firepg").style.display="block";
+			if(tot100>210){
+				document.getElementById("firepassed").style.display="block";
+				document.getElementById("student_name2").innerHTML=student_namejs;
+			}
+			else{
+				document.getElementById("firefailed").style.display="block";
+				document.getElementById("student_name1").innerHTML=student_namejs;}
+
+			var g = document.getElementById("group");
+			G=g.options[g.selectedIndex].value;
+
+			if(noofrep==1){
+			setTimeout(function(){document.getElementById("firepg").style.display="none";
+				document.getElementById("result").style.display="block";
+					if(G==1){
+						document.getElementById("b12").value=f;
+						document.getElementById("bio_result").style.display="block";}
+					else if(G==2){
+						document.getElementById("cs12").value=f;
+						document.getElementById("cs_result").style.display="block";};},5000)
+			noofrep++;
+			}
+
+			/*document.getElementById("result").style.display="block";
+			var g = document.getElementById("group");
+			G=g.options[g.selectedIndex].value;
+    		if(G==1){
+				document.getElementById("b12").value=f;
+				document.getElementById("bio_result").style.display="block";
+			}
+			else if(G==2){
+				document.getElementById("cs12").value=f;
+				document.getElementById("cs_result").style.display="block";
+			}
+			*/
+
+			return totarray;
+		}
+
+		function Cutoff_func(){
+			
+			var tot100 = HSC2result();
+			var engn = tot100[2] + (tot100[3]/2) + (tot100[4]/2);
+			var agri = (tot100[2]+tot100[3]+tot100[4]+tot100[5]) /2;
+			var vet = (tot100[3]/2) + (tot100[4]/2) + tot100[5];
+			console.log(engn,agri); 
+			
+			document.getElementById("foot").style.display="none";
+			document.getElementById("firepg").style.display="none";
+			document.getElementById("cutoff").style.display="block";
+			document.getElementById("result").style.display="none";
+			document.getElementById("engn_cutoff").value=engn;
+			var g = document.getElementById("group");
+			G=g.options[g.selectedIndex].value;
+    		if(G==1){
+				document.getElementById("agri_cutoff").value=agri;
+				document.getElementById("vet_cutoff").value=vet;
+			}
+			else{
+				document.getElementById("agri_cutoff").value=0;
+				document.getElementById("vet_cutoff").value=0;
+			}
+
+			document.getElementById("myForm").submit();
+		}
+	</script>
+</head>
+<body>
+
+	<div class="bdy">
+		
+	<form id="myForm" >
+		<div class="group_selection" style="display:block;" id="group_selection">
+			<h2><center>TN HSC +2 RESULT Calculator</center></h2>
+			<label>NAME:</label>
+			<input type="text" id="student_namein"  required><br><br>
+			<label>GROUP</label><br>
+			<select  class="group" id="group">
+				<option value="0">--Select Your Group--</option>
+				<option value="1">BIO-MATHS</option>
+				<option value="2">Computer-Science</option>
+				</select>	<br><br>
+				<input type="button" value="Next" onclick="chosegroup()" id="button">
+		</div>
+
+		<div class="X_mark" style="display: none;padding: 0 15px;" id="X_mark">
+			<center><h2>SSLC MARKS</h2>
+			<h3>*Enter the marks for 100*</h3></center>
+			<label>TAMIL</label><input type="number" id="t10" name="" max="100" required onkeyup="show10result()"><br>
+			<label>ENGLISH</label><input type="number" id="e10" name="" max="100" required onkeyup="show10result()"><br>
+			<label>MATHS</label><input type="number" id="m10" name="" max="100" required onkeyup="show10result()"> <br>
+			<label>SCIENCE</label><input type="number" id="s10" name="" max="100" required onkeyup="show10result()"><br>
+			<label>SOCIAL SCIENCE</label><input type="number" id="ss10" name="" max="100" required onkeyup="show10result()"><br><br>
+				<label>Check Your Total</label>
+			<label>10TH RESULT</label><input type="number" id="r10" name="entry.495849632" value="" required><br><br>
+			<input type="button" value="Next" onclick="SSLC()" id="button">
+		</div>
+
+		<div class="XI_mark" style="display: none;padding: 0 15px;" id="XI_mark">
+			<center><h2>HSC-1st YEAR MARKS</h2>
+				<h3>*Enter the marks for 100*</h3></center>
+				<label>TAMIL</label><input type="number" id="t11" name="" max="100" required onkeyup="show11result()"><br>
+				<label>ENGLISH</label><input type="number" id="e11" name="" max="100" required onkeyup="show11result()"><br>
+				<label>MATHS</label><input type="number" id="m11" name="" max="100" required onkeyup="show11result()"><br>
+				<label>PHYSICS</label><input type="number" id="p11" name="" max="100" required onkeyup="show11result()"><br>
+				<label>CHEMISTRY</label><input type="number" id="c11" name="" max="100" required onkeyup="show11result()"><br>
+
+				<div id="bio_marks" style="display: none;">
+					<label >BIOLOGY</label><input type="number" id="b11" name="" max="100" required onkeyup="show11result()"><br>
+				</div>
+				<div id="cs_marks" style="display: none;">
+					<label >COMPUTER SCIENCE</label><input type="number" id="cs11" name="" max="100" required onkeyup="show11result()"><br>
+				</div>
+			<br><br>
+			<label>Check Your Total</label>
+			<label>11TH RESULT</label><input type="number" id="r11" name="" value="" required><br><br>
+			<input type="button" value="Next" onclick="HSC1()" id="button">
+		</div>
+
+		<div class="internal_mark"> 
+			<div id="internal_mark" style="display: none;">
+				<center><h2>INTERNAL MARK</h2></center>
+			<p>HOPE ALL WOULD SCORED FULL MARKS IN INTERNALS (PRACTICALS + INTERNALS).</p>
+			<p> SO WE ADD 30 marks TO ALL SUBJECTS.</p>
+			<input type="button" value="RESULT" onclick="HSC2result()" id="button">		
+			</div>
+		</div>
+
+		<div class="result" style="display: none;" id="result">
+			<center><h2>HSC-2nd YEAR MARKS</h2>
+				<h3>*The Marks are for 100*</h3></center>
+					<label>TAMIL</label><input type="number" id="t12" name="" max="100" value="" required><br>
+					<label>ENGLISH</label><input type="number" id="e12" name="" max="100" value="" required><br>
+					<label>MATHS</label><input type="number" id="m12" name="" max="100" value="" required><br>
+					<label>PHYSICS</label><input type="number" id="p12" name="" max="100" value="" required><br>
+					<label>CHEMISTRY</label><input type="number" id="c12" name="" max="100" value="" required><br>
+			<div id="bio_result" style="display: none;">
+				<label>BIOLOGY</label><input type="number" id="b12" name="" max="100" value="" required><br>
+			</div>
+			<div id="cs_result" style="display: none;">
+				<label>COMPUTER SCIENCE</label><input type="number" id="cs12" name="" max="100" value="" required><br>
+			</div><br><br>
+			
+				<label>12TH RESULT</label><input type="number" id="r12" name="" value="" required><br><br>
+			<input type="button" value="Click here to see your CUT-OFF" onclick="Cutoff_func()" id="cutoffbutton">
+		</div>
+
+		<div class="cutoff_class" id="cutoff" style="display:none">
+			<center><h2>CUT-OFF</h2></center>
+			<label>Engineering Cut-off</label><br><input type="number" id="engn_cutoff" name="" value=""><br><br>
+			<label>Agri Cut-off</label><br><input type="number" id="agri_cutoff" name="" value=""><br><br>
+			<label>Veterinary Science Cut-off</label><br><input type="number" id="vet_cutoff" name="" value=""><br><br><br>
+			<div class="account" style="background-color:slateblue;;border-radius:6%;border-style:outset;padding: 5px 10px;">
+				<label>Click here to view my account.</label><br>
+				<center><a href="https://instagram.com/_clanga_hastata_?utm_medium=copy_link" target="blank">bhanuprathap @ bp</a></center>
+			</div><br>
+			<div class="account" style="background-color:slateblue;;border-radius:6%;border-style:outset;padding: 5px 10px;">
+				<center><label>Kindly give your feedback</label><br>
+				<a href="https://instagram.com/_clanga_hastata_?utm_medium=copy_link" target="blank" style="color: orchid;">feedback</a></center>
+			</div>
+
+		</div>
+	</form>
+</div>
+
+<div id="firepg">
+<div class="container">
+<div class="row" id="firefailed" style="display: none;">
+	<span class="text1">Sorry!</span>
+	<span class="text2" id="student_name1"> Niranjan </span><br>
+	<span class="text1">You are not passed this time.</span>
+</div>
+</div>
+
+<div id="firepassed" style="display: none;">
+	<div class="container">
+			<div class="row">
+				<span class="text1">Congratulation!</span>
+				<span class="text2" id="student_name2"> Niranjan </span><br>
+				<span class="text1">You are passed.</span>
+			</div>
+		</div>
+	
+	<div class="firework" id="firework1">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	<div class="firework" id="firework2">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	<div class="firework" id="firework3">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework4">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework5">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework6">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework7">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework8">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework9">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	<div class="firework" id="firework10">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework11">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework12">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework13">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework14">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework15">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework16">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework17">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework18">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework19">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework20">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework21">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework22">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework23">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework24">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework25">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework26">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework27">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework28">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework29">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+	
+	<div class="firework" id="firework30">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+</div>
+</div>
+
+<script>
+	function show10result(){
+		var a = document.getElementById("t10").value;
+			var b = document.getElementById("e10").value;
+			var c = document.getElementById("m10").value;
+			var d = document.getElementById("s10").value;
+			var e = document.getElementById("ss10").value;
+			var sslcmark = Number(a)+Number(b)+Number(c)+Number(d)+Number(e);
+			document.getElementById("r10").value=sslcmark;
+	}
+
+	function show11result(){
+		var a = Number(document.getElementById("t11").value);
+		var b = Number(document.getElementById("e11").value);
+		var c = Number(document.getElementById("m11").value);
+		var d = Number(document.getElementById("p11").value);
+		var e = Number(document.getElementById("c11").value);
+		var f = Number(document.getElementById("b11").value);
+		var cs = Number(document.getElementById("cs11").value);
+
+		var hscmark=a+b+c+d+e+f+cs;
+		console.log(a,b,c,d,e,f,cs);
+		document.getElementById("r11").value=hscmark;
+	}
+</script>
+
+<br>
+<br>
+<div class="foot" id="foot" style="display:block;border: olive;background-color: olive;    padding: 4px 10px;
+border-radius: 3%;">
+	<div align="right">
+	<f2>Developped by:</f2><br>
+	<f2><a href="https://instagram.com/_clanga_hastata_?utm_medium=copy_link" target="blank" style="color: yellow;">bhanuprathap @ bp</a><br>
+	<a href="https://instagram.com/dhanush.sa?utm_medium=copy_link" target="blank" style="color: yellow;">dhanush</a></f2>
+</div>
+</div>
+</body>
+</html>
